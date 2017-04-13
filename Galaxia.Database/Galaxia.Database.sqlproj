@@ -61,5 +61,12 @@
   </ItemGroup>
   <ItemGroup>
     <Build Include="Estrutura\Planeta.sql" />
+    <Build Include="Estrutura\Cliente.sql" />
+    <Build Include="Estrutura\Transporte.sql" />
+    <Build Include="Estrutura\Viagem.sql" />
+    <Build Include="Estrutura\ViagemCliente.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Galaxia.Database.publish.xml" />
   </ItemGroup>
 </Project>

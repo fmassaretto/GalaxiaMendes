@@ -1,0 +1,6 @@
+﻿CREATE TABLE [dbo].[Transporte]
+(
+	[Id] INT NOT NULL PRIMARY KEY IDENTITY, 
+	[Nome] VARCHAR(50) NOT NULL, 
+	[Terreno] VARCHAR(50) NOT NULL
+)
