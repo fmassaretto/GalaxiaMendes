@@ -16,17 +16,17 @@ namespace Galaxia.Negocio
         }
         public void Alterar(Planeta obj)
         {
-            throw new NotImplementedException();
+            _repostorio.Alterar(obj);
         }
 
         public void Deletar(Planeta obj)
         {
-            throw new NotImplementedException();
+            _repostorio.Deletar(obj);
         }
 
         public void Incluir(Planeta obj)
         {
-            throw new NotImplementedException();
+            _repostorio.Incluir(obj);
         }
 
         public IEnumerable<Planeta> Selecionar()
@@ -36,7 +36,7 @@ namespace Galaxia.Negocio
 
         public Planeta SelecionarPorId(int id)
         {
-            throw new NotImplementedException();
+            return _repostorio.SelecionarPorId(id);
         }
     }
 }

@@ -41,9 +41,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ClienteNG.cs" />
     <Compile Include="Helpers\Validacao.cs" />
     <Compile Include="PlanetaNG.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TransporteNG.cs" />
+    <Compile Include="ViagemNG.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Galaxia.Dados\Galaxia.Dados.csproj">
