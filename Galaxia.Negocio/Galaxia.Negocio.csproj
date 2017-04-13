@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Abstracao\RepositorioNG.cs" />
     <Compile Include="ClienteNG.cs" />
     <Compile Include="Helpers\Validacao.cs" />
     <Compile Include="PlanetaNG.cs" />

@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Galaxia.Negocio
 {
-    class TransporteNG : IRepositorioBase<Transporte>
+    public class TransporteNG : IRepositorioBase<Transporte>
     {
         private RepositorioBase<Transporte> _repositorio;
         public TransporteNG()
@@ -18,17 +18,17 @@ namespace Galaxia.Negocio
         }
         public void Alterar(Transporte obj)
         {
-            throw new NotImplementedException();
+            _repositorio.Alterar(obj);
         }
 
         public void Deletar(Transporte obj)
         {
-            throw new NotImplementedException();
+            _repositorio.Deletar(obj);
         }
 
         public void Incluir(Transporte obj)
         {
-            throw new NotImplementedException();
+            _repositorio.Incluir(obj);
         }
 
         public IEnumerable<Transporte> Selecionar()

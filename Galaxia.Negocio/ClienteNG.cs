@@ -15,17 +15,17 @@ namespace Galaxia.Negocio
         }
         public void Alterar(Cliente obj)
         {
-            throw new NotImplementedException();
+            _repositorio.Alterar(obj);
         }
 
         public void Deletar(Cliente obj)
         {
-            throw new NotImplementedException();
+            _repositorio.Deletar(obj);
         }
 
         public void Incluir(Cliente obj)
         {
-            throw new NotImplementedException();
+            _repositorio.Incluir(obj);
         }
 
         public IEnumerable<Cliente> Selecionar()

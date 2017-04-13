@@ -36,7 +36,7 @@ namespace Galaxia.WebApi.Controllers
         public IHttpActionResult Incluir(Planeta planeta)
         {
             _planetaNg.Incluir(planeta);
-            return Created("Planeta/Incluir", planeta);
+            return Created(Request.RequestUri +"/"+ planeta.Id, planeta);
         }
 
         [HttpPut]

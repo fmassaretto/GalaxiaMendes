@@ -12,5 +12,7 @@ namespace Galaxia.Dados.Contexto
         }
 
         public DbSet<Planeta> Planeta { get; set; }
+        public DbSet<Cliente> Cliente { get; set; }
+        public DbSet<Transporte> Transporte { get; set; }
     }
 }

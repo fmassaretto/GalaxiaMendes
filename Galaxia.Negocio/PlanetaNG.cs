@@ -4,39 +4,38 @@ using System.Collections.Generic;
 using Galaxia.Dominio;
 using Galaxia.Dominio.Interface;
 using Galaxia.Dados.Repositorio;
+using Galaxia.Negocio.Abstracao;
 
 namespace Galaxia.Negocio
 {
-    public class PlanetaNG : IRepositorioBase<Planeta>
+    public class PlanetaNG : RepositorioNG<Planeta>
     {
-        private RepositorioBase<Planeta> _repostorio;
+        private PlanetaRepositorio _repositorio;
         public PlanetaNG()
         {
-            _repostorio = new RepositorioBase<Planeta>();
-        }
-        public void Alterar(Planeta obj)
-        {
-            _repostorio.Alterar(obj);
+            _repositorio = new PlanetaRepositorio();
         }
 
-        public void Deletar(Planeta obj)
+        public override void Incluir(Planeta obj)
         {
-            _repostorio.Deletar(obj);
+            var retorno = base.getValidationErros(obj);
+            var listaErro = string.Empty;
+
+            foreach(var i in retorno)
+            {
+                listaErro += i.ErrorMessage + ";";
+            }
+
+
+            if (listaErro.Length > 0)
+                throw new Exception("Erro: " + listaErro);
+
+            base.Incluir(obj);
         }
 
-        public void Incluir(Planeta obj)
+        public List<Planeta> TrazerListaPlaneta()
         {
-            _repostorio.Incluir(obj);
-        }
-
-        public IEnumerable<Planeta> Selecionar()
-        {
-            return _repostorio.Selecionar();
-        }
-
-        public Planeta SelecionarPorId(int id)
-        {
-            return _repostorio.SelecionarPorId(id);
+            return _repositorio.TrazerListaPlaneta();
         }
     }
 }
