@@ -1,6 +1,7 @@
 ﻿using System.Web.Http;
 
 using Galaxia.Negocio;
+using Galaxia.Dominio;
 
 namespace Galaxia.WebApi.Controllers
 {
@@ -21,6 +22,37 @@ namespace Galaxia.WebApi.Controllers
         {
             var retorno = _planetaNg.Selecionar();
             return Ok(retorno);
+        }
+
+        [HttpGet]
+        [Route("Planeta/{id}")]
+        public IHttpActionResult SelecionarPorId(int id)
+        {
+            var retorno = _planetaNg.SelecionarPorId(id);
+            return Ok(retorno);
+        }
+        [HttpPost]
+        [Route("Planeta")]
+        public IHttpActionResult Incluir(Planeta planeta)
+        {
+            _planetaNg.Incluir(planeta);
+            return Created("Planeta/Incluir", planeta);
+        }
+
+        [HttpPut]
+        [Route("Planeta")]
+        public IHttpActionResult Alterar(Planeta planeta)
+        {
+            _planetaNg.Alterar(planeta);
+            return Ok();
+        }
+
+        [HttpDelete]
+        [Route("Planeta")]
+        public IHttpActionResult Excluir(Planeta planeta)
+        {
+            _planetaNg.Deletar(planeta);
+            return Ok();
         }
     }
 }
